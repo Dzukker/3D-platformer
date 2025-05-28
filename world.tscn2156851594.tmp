@@ -33,3 +33,7 @@ transform = Transform3D(0.959432, 0.28194, 0, -0.228501, 0.777582, 0.585793, 0.1
 
 [node name="player" parent="." instance=ExtResource("2_fj7yv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.10775, 0)
+SPEED = null
+ACCELERATION = null
+DECELERATION = null
+JUMP_CUTOFF = null

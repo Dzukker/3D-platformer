@@ -2,14 +2,16 @@ extends CharacterBody3D
 
 
 @export var SPEED = 10
-@export var JUMP_VELOCITY = 17
-@export var JUMP_CUTOFF = 8
 @export var ACCELERATION = 0.7
 @export var DECELERATION = 1
 
-const MAXTIME = 0.15
+@export var JUMP_CUTOFF = 8
+var JUMP_TIMER = 0.0
+var JUMP_VELOCITY = 17
+
+const MAXTIME = 0.3
 var COYOTE_TIMER = 0
-var CAN_JUMP = true
+var CAN_JUMP = false
 var TERMINAL_VELOCITY = 25
 
 func _physics_process(delta: float) -> void:
@@ -28,13 +30,15 @@ func _physics_process(delta: float) -> void:
 	if not CAN_JUMP:
 		if velocity.y < TERMINAL_VELOCITY:
 			velocity += get_gravity() * delta
-
+		
 	# Handle jump.
-	if Input.is_action_pressed("jump") and CAN_JUMP:
-		velocity.y = move_toward(velocity.y, JUMP_VELOCITY, delta)
-		CAN_JUMP = false
-	if Input.is_action_just_released("jump") && velocity.y > JUMP_VELOCITY:
-		velocity.y = JUMP_CUTOFF
+	#if Input.is_action_just_pressed("jump") and JUMP_TIMER < 0.5 and CAN_JUMP:
+		#velocity.y = JUMP_CUTOFF
+	#else:
+		#velocity.y = JUMP_VELOCITY
+		#JUMP_TIMER = 0
+	#CAN_JUMP = false
+	
 	
 	# Get the input direction and handle the movement/deceleration
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
