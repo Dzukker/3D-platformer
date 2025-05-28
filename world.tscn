@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuxjvwh4s5g4m"]
+
+[ext_resource type="PackedScene" uid="uid://rn0ph4tewmcj" path="res://platform.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://clt7xwylmrxwu" path="res://player.tscn" id="2_fj7yv"]
+
+[node name="world" type="Node3D"]
+
+[node name="platform" parent="." instance=ExtResource("1_f3sb7")]
+
+[node name="platform2" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="platform3" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, -10)
+
+[node name="platform5" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -10)
+
+[node name="platform6" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -10)
+
+[node name="platform7" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, -10)
+
+[node name="platform8" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 1, 0)
+
+[node name="platform4" parent="." instance=ExtResource("1_f3sb7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.959432, 0.28194, 0, -0.228501, 0.777582, 0.585793, 0.165158, -0.562028, 0.810461, -5.17993, 12.9329, 3.44453)
+
+[node name="player" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.10775, 0)
+JUMP_VELOCITY = 17
